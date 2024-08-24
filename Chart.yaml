@@ -1,6 +1,11 @@
 apiVersion: v2
 name: ideavault
 description: A Helm chart for Kubernetes
+dependencies:
+- name: mongodb
+  version: "15.6.17"
+  repository: "https://charts.bitnami.com/bitnami"
+  condition: mongodb.enabled
 
 # A chart can be either an 'application' or a 'library' chart.
 #

@@ -8,8 +8,10 @@ image:
   repository: 644435390668.dkr.ecr.us-east-1.amazonaws.com/ideavault
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "1.0.30"
-
+  tag: "1.0.31"
+  env:
+    - name: MONGO_URI
+      value: "mongodb://root:admin@ideavault-chart-mongodb-0.ideavault-chart-mongodb-headless,ideavault-chart-mongodb-1.ideavault-chart-mongodb-headless:27017/ideaVault?replicaSet=rs0&authSource=admin"
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
@@ -100,6 +102,24 @@ volumeMounts: []
 # - name: foo
 #   mountPath: "/etc/foo"
 #   readOnly: true
+
+mongodb:
+  replicaCount: 2
+  architecture: replicaset
+  auth:
+    enabled: true # enables authentication.
+    rootPassword: admin
+  persistence:
+    enabled: true
+    size: 10Gi
+    storageClass: "gp2"
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
 
 nodeSelector: {}
 
