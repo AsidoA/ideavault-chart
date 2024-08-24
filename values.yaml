@@ -9,9 +9,12 @@ image:
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "1.0.31"
-  env:
-    - name: MONGO_URI
-      value: "mongodb://root:admin@ideavault-chart-mongodb-0.ideavault-chart-mongodb-headless,ideavault-chart-mongodb-1.ideavault-chart-mongodb-headless:27017/ideaVault?replicaSet=rs0&authSource=admin"
+
+secret:
+  name: ideavault-secret
+  type: Opaque
+  uri : "bW9uZ29kYjovL3Jvb3Q6YWRtaW5AaWRlYXZhdWx0LWNoYXJ0LW1vbmdvZGItMC5pZGVhdmF1bHQtY2hhcnQtbW9uZ29kYi1oZWFkbGVzcyxpZGVhdmF1bHQtY2hhcnQtbW9uZ29kYi0xLmlkZWF2YXVsdC1jaGFydC1tb25nb2RiLWhlYWRsZXNzOjI3MDE3L2lkZWFWYXVsdD9yZXBsaWNhU2V0PXJzMCZhdXRoU291cmNlPWFkbWlu"
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
