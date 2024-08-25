@@ -56,7 +56,7 @@ ingress:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: / 
   hosts:
-    - host: a5ab1aca3be6b43bdab8f61c3a31e32c-341390499.us-east-1.elb.amazonaws.com
+    - host: a0c71a09668e24b81b9f7c5092b1061a-1066674775.us-east-1.elb.amazonaws.com
       paths:
         - path: /
           pathType: Prefix
