@@ -10,6 +10,6 @@ spec:
     matchLabels:
       app: ideavault-chart  # must match your app's Service labels
   endpoints:
-  - port: 80-5000  # Since there's no port name, we'll use a descriptive numeric name
+  - port: 5000  # Since there's no port name, we'll use a descriptive numeric name
     targetPort: 5000
     path: /metrics
