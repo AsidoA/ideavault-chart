@@ -55,15 +55,25 @@ ingress:
   className: "nginx"
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: / 
+    cert-manager.io/cluster-issuer: ideavault-prod
   hosts:
-    - host: a0c71a09668e24b81b9f7c5092b1061a-1066674775.us-east-1.elb.amazonaws.com
+    - host: ideavault.zapto.org
       paths:
         - path: /
           pathType: Prefix
-  tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+  tls:
+  - hosts:
+    - ideavault.zapto.org
+    secretName: ideavault-prod
+  rules:
+  - host: ideavault.zapto.org
+
+clusterIssuer:
+  name: ideavault-prod
+  server: https://acme-v02.api.letsencrypt.org/directory
+  email: asidoasif@gmail.com
+  privateKeySecretName: ideavault-prod
+  ingressClass: nginx
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
