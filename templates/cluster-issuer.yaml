@@ -8,7 +8,7 @@ spec:
     server: {{ .Values.clusterIssuer.server | default "https://acme-v02.api.letsencrypt.org/directory" | quote }}
     email: {{ .Values.clusterIssuer.email | quote }}
     privateKeySecretRef:
-      name: {{ .Values.clusterIssuer.privateKeySecretName | default "ideavault-prod" | quote }}
+      name: {{ .Values.clusterIssuer.privateKeySecretName | default "ideavault-tls-secret" | quote }}
     solvers:
     - http01:
         ingress:

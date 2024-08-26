@@ -64,15 +64,14 @@ ingress:
   tls:
   - hosts:
     - ideavault.zapto.org
-    secretName: ideavault-prod
-  rules:
-  - host: ideavault.zapto.org
+    secretName: ideavault-tls-secret
+  useTLS: true
 
 clusterIssuer:
   name: ideavault-prod
   server: https://acme-v02.api.letsencrypt.org/directory
   email: asidoasif@gmail.com
-  privateKeySecretName: ideavault-prod
+  privateKeySecretName: ideavault-tls-secret
   ingressClass: nginx
 
 resources: {}
