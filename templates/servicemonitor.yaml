@@ -4,6 +4,7 @@ metadata:
   name: idea-vault-monitor
   labels:
     release: kube-prometheus-stack-prometheus # must match your Prometheus Operator release name
+    app: ideavault-service
 spec:
   selector:
     matchLabels:
