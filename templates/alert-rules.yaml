@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: ideavault-custom-rules
+  namespace: monitoring  # Adjust to your namespace
+  labels:
+    app: ideavault
+spec:
+  groups:
+  - name: ideavault-custom-rules
+    rules:
+    - alert: HighRequestRate
+      expr: sum(requests_total{job="ideavault-app-service"}) > 5
+      for: 5m
+      labels:
+        severity: warning
+      annotations:
+        summary: "High number of requests detected"
+        description: "Total requests have exceeded 5 in the last 5 minutes."
