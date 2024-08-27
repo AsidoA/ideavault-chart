@@ -12,8 +12,8 @@ image:
 
 secret:
   name: ideavault-secret
-  type: Opaque
-  uri : "bW9uZ29kYjovL3Jvb3Q6YWRtaW5AaWRlYXZhdWx0LWNoYXJ0LW1vbmdvZGItMC5pZGVhdmF1bHQtY2hhcnQtbW9uZ29kYi1oZWFkbGVzcyxpZGVhdmF1bHQtY2hhcnQtbW9uZ29kYi0xLmlkZWF2YXVsdC1jaGFydC1tb25nb2RiLWhlYWRsZXNzOjI3MDE3L2lkZWFWYXVsdD9yZXBsaWNhU2V0PXJzMCZhdXRoU291cmNlPWFkbWlu"
+  type: Opaque 
+  #change this ^^^^^ not good - critical
 
 imagePullSecrets: []
 nameOverride: ""
