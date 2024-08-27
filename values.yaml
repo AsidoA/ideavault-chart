@@ -13,7 +13,6 @@ image:
 secret:
   name: ideavault-secret
   type: Opaque 
-  #change this ^^^^^ not good - critical
 
 imagePullSecrets: []
 nameOverride: ""
