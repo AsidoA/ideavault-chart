@@ -7,8 +7,6 @@ spec:
   ports:
     - name: idea-app-met
       port: {{ .Values.service.port }}
-      targetPort: 5000
-      protocol: TCP
   selector:
     {{- with .Values.podLabels }}
     {{- toYaml . | nindent 8 }}
