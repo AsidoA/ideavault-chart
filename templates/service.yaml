@@ -10,7 +10,7 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - name: idea-app-met
+    - name: "idea-app-met"
       port: {{ .Values.service.port }}
       targetPort: 5000
       protocol: TCP
