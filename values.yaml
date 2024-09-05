@@ -131,6 +131,9 @@ mongodb:
     limits:
       cpu: 500m
       memory: 512Mi
+  envFrom:
+    - secretRef:
+        name: ideavault-secret
 
 nodeSelector: {}
 
