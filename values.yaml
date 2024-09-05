@@ -119,7 +119,7 @@ mongodb:
   architecture: replicaset
   auth:
     enabled: true # enables authentication.
-    rootPassword: admin
+    # rootPassword: admin #critical
   persistence:
     enabled: true
     size: 10Gi
