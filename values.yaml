@@ -119,6 +119,7 @@ mongodb:
   architecture: replicaset
   auth:
     enabled: true # enables authentication.
+    existingSecret: ideavault-secret
     # rootPassword: admin #critical
   persistence:
     enabled: true
@@ -131,9 +132,6 @@ mongodb:
     limits:
       cpu: 500m
       memory: 512Mi
-  envFrom:
-    - secretRef:
-        name: ideavault-secret
 
 nodeSelector: {}
 
